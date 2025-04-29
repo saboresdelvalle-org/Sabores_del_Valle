@@ -8,7 +8,7 @@
 - **Receta:** Se marina pescado fresco y mariscos en jugo de limón, se mezcla con cebolla roja, ají limo, sal y cilantro, y se sirve con camote cocido y choclo.
 
 ### Salsa a la Huancaína
-- **Descripción:** Tradicional entrada peruana de papas amarillas hervidas, bañadas en una suave crema de ají amarillo, queso fresco y leche, servidas sobre hojas de lechuga y huevo duro.
+- **Descripción:** Tradicional entrada peruana de papas amarillas hervidas, bañadas en una suave crema de ají amarillo cremoso, queso fresco y leche, servidas sobre hojas de lechuga y huevo duro.
 - **Precio:** 18
 - **Receta:** Se hierven las papas y se cubren con una crema hecha a base de ají amarillo, queso fresco, leche y galletas, todo licuado hasta obtener una textura cremosa.
 
