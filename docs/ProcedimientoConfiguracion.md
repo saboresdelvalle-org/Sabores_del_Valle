@@ -4,7 +4,7 @@
 ### Pasos para crear el repositorio remoto:
 
    1.	Se accedió al sitio GitHub.
-![acceder_github](<acceder_github.png>)
+![acceder_github](<imagenes/acceder_github.png>)
    2. Se inició sesión en la cuenta personal.
    3. Se hizo clic en el botón **"New"** para crear un nuevo repositorio.
 ![Punto2-3](<Punto2-3.png>)
