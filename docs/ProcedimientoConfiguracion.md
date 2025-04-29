@@ -47,15 +47,15 @@ Pasos para configurar el entorno de desarrollo local:
 ### Creación de archivo inicial y establecemos la rama main
 Desde GitHub, obtuvimos la URL del repositorio creado previamente. 
    1.	Agrega algún archivo dentro del repositorio local
-   ![readme](<readme.png)
+   ![readme](<imagenes/readme.png)
    2.	Agrega todos los archivos al área de staging
-   ![add_readme](<add_readme.png)
+   ![add_readme](<imagenes/add_readme.png)
    3.	Haz tu primer commit
-   ![commit_readme](<commit_readme.png)
+   ![commit_readme](<imagenes/commit_readme.png)
    4.	Ahora forzamos que la rama sea main
-   ![forzamos_main](<forzamos_main.png)
+   ![forzamos_main](<imagenes/forzamos_main.png)
    5.	Finalmente sube main a GitHub
-   ![push_readme](<push_readme.png)
+   ![push_readme](<imagenes/push_readme.png)
 
 
 ### Configuración de Ramas Principales y de Trabajo 
