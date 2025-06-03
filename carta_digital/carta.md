@@ -25,7 +25,20 @@
 - **Precio:** 18
 - **Receta:** Se hierven las papas y se cubren con una crema hecha a base de ají amarillo, queso fresco, leche y galletas, todo licuado hasta obtener una textura cremosa.
 
+
+### Lomo Saltado
+- **Descripción:**
+- **Precio:**
+- **Receta:** Cortar carne de res en tiras, saltear con cebolla, tomate y sillao, servir con papas fritas y arroz blanco.
+
+
 ## Bebidas
+
+### Agua de Piña
+- **Descripción:**
+- **Precio:**
+- **Receta:** Hervir la cáscara de piña con canela y clavo de olor, colar y endulzar al gusto.
+
 
 ### Emoliente
 - **Descripción:** Bebida tibia tradicional a base de cebada, linaza y hierbas andinas con propiedades digestivas y relajantes.
