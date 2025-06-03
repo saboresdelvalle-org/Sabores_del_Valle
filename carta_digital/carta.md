@@ -28,7 +28,7 @@
 
 ### Lomo Saltado
 - **Descripción:**
-- **Precio:**
+- **Precio:** 28
 - **Receta:** Cortar carne de res en tiras, saltear con cebolla, tomate y sillao, servir con papas fritas y arroz blanco.
 
 
@@ -36,7 +36,7 @@
 
 ### Agua de Piña
 - **Descripción:**
-- **Precio:**
+- **Precio:** 7
 - **Receta:** Hervir la cáscara de piña con canela y clavo de olor, colar y endulzar al gusto.
 
 
