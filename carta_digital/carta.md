@@ -28,7 +28,7 @@
 
 ### Lomo Saltado
 - **Descripción:** Tradicional plato criollo salteado en wok con carne jugosa, cebolla, tomate y especias, acompañado de arroz y papas.
-- **Precio:**
+- **Precio:** 28
 - **Receta:** Cortar carne de res en tiras, saltear con cebolla, tomate y sillao, servir con papas fritas y arroz blanco.
 
 
@@ -36,7 +36,7 @@
 
 ### Agua de Piña
 - **Descripción:** Refrescante bebida natural elaborada con cáscaras y pulpa de piña, hervida con especias y endulzada al gusto, ideal para acompañar cualquier comida.
-- **Precio:**
+- **Precio:** 7
 - **Receta:** Hervir la cáscara de piña con canela y clavo de olor, colar y endulzar al gusto.
 
 
