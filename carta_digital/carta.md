@@ -20,6 +20,12 @@
 - **Receta:** Se marina pescado fresco y mariscos en jugo de limón, se mezcla con cebolla roja, ají limo, sal y cilantro, y se sirve con camote cocido y choclo.
 
 
+  ### Ceviche Clásico de Pescado
+- **Descripción:** Plato emblemático de la cocina peruana elaborado con pescado fresco marinado en jugo de limón, acompañado de cebolla morada, ají limo, camote y choclo. Refrescante, cítrico y lleno de sabor.
+- **Precio:** 28
+- **Receta:** Se corta pescado blanco fresco en cubos, se marina con jugo de limón, sal, ají limo picado y cebolla morada en pluma. Se deja reposar unos minutos y se sirve con camote cocido, choclo desgranado y hojas de lechuga.
+
+
 ### Salsa a la Huancaína
 - **Descripción:** Tradicional entrada peruana de papas amarillas hervidas, bañadas en una suave crema de ají amarillo cremoso, queso fresco y leche, servidas sobre hojas de lechuga y huevo duro.
 - **Precio:** 18
@@ -56,3 +62,6 @@
 - **Descripción:** Refrescante bebida andina preparada con maíz morado, frutas y especias, ideal para acompañar cualquier plato.
 - **Precio:** 10
 - **Receta:** Se hierve maíz morado con piña, canela y clavo de olor; luego se cuela y se endulza con azúcar, añadiendo jugo de limón al final.
+
+
+
