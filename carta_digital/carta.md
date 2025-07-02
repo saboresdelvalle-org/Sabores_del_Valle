@@ -20,7 +20,7 @@
 - **Receta:** Se marina pescado fresco y mariscos en jugo de limón, se mezcla con cebolla roja, ají limo, sal y cilantro, y se sirve con camote cocido y choclo.
 
 
-  ### Ceviche Clásico de Pescado
+### Ceviche Clásico de Pescado
 - **Descripción:** Plato emblemático de la cocina peruana elaborado con pescado fresco marinado en jugo de limón, acompañado de cebolla morada, ají limo, camote y choclo. Refrescante, cítrico y lleno de sabor.
 - **Precio:** 28
 - **Receta:** Se corta pescado blanco fresco en cubos, se marina con jugo de limón, sal, ají limo picado y cebolla morada en pluma. Se deja reposar unos minutos y se sirve con camote cocido, choclo desgranado y hojas de lechuga.
