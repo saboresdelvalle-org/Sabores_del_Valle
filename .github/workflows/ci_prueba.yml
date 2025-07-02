@@ -14,10 +14,10 @@ jobs:
       - name: Simular compilación del proyecto
         run: |
           echo "🔧 Compilando proyecto..."
-          if [ -f carta.md ]; then
-            echo " Archivo carta.md encontrado"
+          if [ -f carta_digital/carta.md ]; then
+            echo "✅ Archivo carta_digital/carta.md encontrado"
           else
-            echo " Archivo carta.md no encontrado"
+            echo "❌ Archivo carta_digital/carta.md no encontrado"
             exit 1
           fi
 
@@ -30,15 +30,16 @@ jobs:
       - name: Simular verificación del contenido
         run: |
           echo "🔍 Verificando contenido del archivo..."
-          grep -q "Carta Digital" carta.md && echo "✅ Contenido válido" || (echo "❌ Título incorrecto" && exit 1)
+          grep -q "Carta Digital" carta_digital/carta.md && echo "✅ Contenido válido" || (echo "❌ Título incorrecto" && exit 1)
 
       - name: Empaquetar archivo
         run: |
           mkdir staging
-          cp carta.md staging/
+          cp carta_digital/carta.md staging/
 
       - name: Subir archivo como artefacto
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Carta Digital
           path: staging
+
