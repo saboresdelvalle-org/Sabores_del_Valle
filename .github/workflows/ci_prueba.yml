@@ -1,0 +1,44 @@
+name: CI - Prueba y Compilacion
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  construir_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: Simular compilación del proyecto
+        run: |
+          echo "🔧 Compilando proyecto..."
+          if [ -f carta.md ]; then
+            echo " Archivo carta.md encontrado"
+          else
+            echo " Archivo carta.md no encontrado"
+            exit 1
+          fi
+
+  publicar_jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: Simular verificación del contenido
+        run: |
+          echo "🔍 Verificando contenido del archivo..."
+          grep -q "Carta Digital" carta.md && echo "✅ Contenido válido" || (echo "❌ Título incorrecto" && exit 1)
+
+      - name: Empaquetar archivo
+        run: |
+          mkdir staging
+          cp carta.md staging/
+
+      - name: Subir archivo como artefacto
+        uses: actions/upload-artifact@v3
+        with:
+          name: Carta Digital
+          path: staging
