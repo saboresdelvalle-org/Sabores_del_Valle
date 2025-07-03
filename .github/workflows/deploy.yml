@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   desplegar-nueva-version:
     name: Compilar, Probar y Crear Release
@@ -21,14 +24,17 @@ jobs:
       - name: 3. Ejecutar Compilación y Pruebas
         run: python scripts/test_carta.py
 
+      - name: Generar timestamp único
+        run: echo "TIMESTAMP=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_ENV
+        
       - name: 4. Crear Release en GitHub
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v1.${{ github.run_number }}
-          release_name: Carta Digital - v1.${{ github.run_number }}
+          tag_name: ${{ env.TIMESTAMP }}
+          release_name: Carta Digital - Despliegue ${{ env.TIMESTAMP }}
           body: |
             Nueva versión desplegada automáticamente.
             Commit: ${{ github.event.head_commit.message }}
@@ -47,12 +53,10 @@ jobs:
             echo "No se encontró ID de Jira en el mensaje del commit."
           fi
 
-      # REEMPLAZA ESTE BLOQUE EN TU ARCHIVO
-
       - name: 6. Añadir Comentario de Despliegue en Jira
         if: env.JIRA_ID
         uses: atlassian/gajira-comment@v3
-        env: # <--- LAS CREDENCIALES AHORA VAN AQUÍ
+        env:
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
           JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
@@ -60,5 +64,5 @@ jobs:
           issue: ${{ env.JIRA_ID }}
           comment: |
             ✅ **Despliegue Completado**
-            Una nueva versión ha sido publicada automáticamente gracias al pipeline de Despliegue Continuo.
+            Una nueva versión ha sido publicada automáticamente.
             - **Release en GitHub:** [${{ steps.create_release.outputs.tag_name }}](${{ steps.create_release.outputs.html_url }})
