@@ -47,15 +47,18 @@ jobs:
             echo "No se encontró ID de Jira en el mensaje del commit."
           fi
 
+      # REEMPLAZA ESTE BLOQUE EN TU ARCHIVO
+
       - name: 6. Añadir Comentario de Despliegue en Jira
         if: env.JIRA_ID
         uses: atlassian/gajira-comment@v3
+        env: # <--- LAS CREDENCIALES AHORA VAN AQUÍ
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
         with:
           issue: ${{ env.JIRA_ID }}
           comment: |
-            ✅ Despliegue Completado
+            ✅ **Despliegue Completado**
             Una nueva versión ha sido publicada automáticamente gracias al pipeline de Despliegue Continuo.
             - **Release en GitHub:** [${{ steps.create_release.outputs.tag_name }}](${{ steps.create_release.outputs.html_url }})
-          jira-base-url: ${{ secrets.JIRA_BASE_URL }}
-          jira-user-email: ${{ secrets.JIRA_USER_EMAIL }}
-          jira-api-token: ${{ secrets.JIRA_API_TOKEN }}
