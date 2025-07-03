@@ -1,0 +1,65 @@
+# .github/workflows/deploy.yml
+name: Pipeline de Despliegue Continuo (CD)
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  desplegar-nueva-version:
+    name: Compilar, Probar y Crear Release
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 1. Descargar código
+        uses: actions/checkout@v3
+
+      - name: 2. Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: 3. Ejecutar Compilación y Pruebas
+        run: python scripts/test_carta.py
+
+      - name: 4. Crear Release en GitHub
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v1.${{ github.run_number }}
+          release_name: Carta Digital - Versión v1.${{ github.run_number }}
+          body: |
+            **Nueva versión de la carta digital desplegada automáticamente.**
+            
+            Este despliegue fue generado por el commit:
+            *${{ github.event.head_commit.message }}*
+          draft: false
+          prerelease: false
+
+      - name: 5. Buscar ID de Jira en el Commit
+        id: get_jira_id
+        run: |
+          commit_message="${{ github.event.head_commit.message }}"
+          jira_id=$(echo "$commit_message" | grep -o -E '[A-Z]{2,}-[0-9]+')
+          if [[ -n "$jira_id" ]]; then
+            echo "JIRA_ID=$jira_id" >> $GITHUB_ENV
+            echo "✅ ID de Jira encontrado: $jira_id"
+          else
+            echo "⚠️ No se encontró ID de Jira en el mensaje del commit."
+          fi
+
+      - name: 6. Añadir Comentario de Despliegue en Jira
+        if: env.JIRA_ID
+        uses: atlassian/gajira-comment@v3
+        with:
+          issue: ${{ env.JIRA_ID }}
+          comment: |
+            ✅ **Despliegue Completado**
+            Una nueva versión ha sido publicada automáticamente gracias al pipeline de Despliegue Continuo.
+            - **Release en GitHub:** [${{ steps.create_release.outputs.tag_name }}](${{ steps.create_release.outputs.html_url }})
+          jira-base-url: ${{ secrets.JIRA_BASE_URL }}
+          jira-user-email: ${{ secrets.JIRA_USER_EMAIL }}
+          jira-api-token: ${{ secrets.JIRA_API_TOKEN }}
