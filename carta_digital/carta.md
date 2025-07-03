@@ -58,4 +58,6 @@
 - **Receta:** Se hierve maíz morado con piña, canela y clavo de olor; luego se cuela y se endulza con azúcar, añadiendo jugo de limón al final.
 
 ### Lomo Fino a la Parrilla
-<!-- Actualización de prueba para verificar despliegue automático -->
+**Descripción:** Jugoso corte de lomo fino, cocido a la perfección en la parrilla y acompañado de papas doradas y ensalada fresca.
+**Precio:** 45  <-- AÑADE ESTA LÍNEA O UNA SIMILAR
+**Receta:** Marinar el lomo, asar a la parrilla al término deseado.
