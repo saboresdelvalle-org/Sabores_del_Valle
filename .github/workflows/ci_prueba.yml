@@ -1,3 +1,4 @@
+# .github/workflows/ci_prueba.yml
 name: CI - Prueba y Compilacion
 
 on:
@@ -6,6 +7,22 @@ on:
 
 jobs:
   construir_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v código final y limpio:**
+
+```yaml
+# .github/workflows/ci_prueba.yml
+name: CI - Prueba y Compilacion
+
+on:
+  pull_request:
+    branches: [ "main", "develop" ] # Lo haremos para PRs a main y develop
+
+jobs:
+  construir_y_probar:
+    name: Compilar y Probar en PR
     runs-on: ubuntu-latest
     steps:
       - name: Clonar repositorio
@@ -21,25 +38,7 @@ jobs:
             exit 1
           fi
 
-  publicar_jobs:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clonar repositorio
-        uses: actions/checkout@v3
-
       - name: Simular verificación del contenido
         run: |
           echo "🔍 Verificando contenido del archivo..."
           grep -q "Carta Digital" carta_digital/carta.md && echo "✅ Contenido válido" || (echo "❌ Título incorrecto" && exit 1)
-
-      - name: Empaquetar archivo
-        run: |
-          mkdir staging
-          cp carta_digital/carta.md staging/
-
-      - name: Subir archivo como artefacto
-        uses: actions/upload-artifact@v4
-        with:
-          name: Carta Digital
-          path: staging
-
