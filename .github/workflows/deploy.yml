@@ -1,4 +1,3 @@
-# .github/workflows/deploy.yml
 name: Pipeline de Despliegue Continuo (CD)
 
 on:
@@ -9,11 +8,6 @@ on:
 jobs:
   desplegar-nueva-version:
     name: Compilar, Probar y Crear Release
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: 1. Descargar código
-        uses: actions/checkout y Crear Release
     runs-on: ubuntu-latest
     
     steps:
