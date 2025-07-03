@@ -56,4 +56,6 @@
 - **Descripción:** Refrescante bebida andina preparada con maíz morado, frutas y especias, ideal para acompañar cualquier plato.
 - **Precio:** 10
 - **Receta:** Se hierve maíz morado con piña, canela y clavo de olor; luego se cuela y se endulza con azúcar, añadiendo jugo de limón al final.
+
+### Lomo Fino a la Parrilla
 <!-- Actualización de prueba para verificar despliegue automático -->
