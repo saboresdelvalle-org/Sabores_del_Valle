@@ -23,18 +23,15 @@ jobs:
 
       - name: 3. Ejecutar Compilación y Pruebas
         run: python scripts/test_carta.py
-
-      - name: Generar timestamp único
-        run: echo "TIMESTAMP=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_ENV
-        
+            
       - name: 4. Crear Release en GitHub
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.TIMESTAMP }}
-          release_name: Carta Digital - Despliegue ${{ env.TIMESTAMP }}
+          tag_name: ${{ github.run_id }}-${{ github.run_attempt }}
+          release_name: Carta Digital - Despliegue ${{ github.run_id }}
           body: |
             Nueva versión desplegada automáticamente.
             Commit: ${{ github.event.head_commit.message }}
