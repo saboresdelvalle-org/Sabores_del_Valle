@@ -52,6 +52,7 @@ jobs:
 
       - name: 6. Añadir Comentario de Despliegue en Jira
         if: env.JIRA_ID
+        continue-on-error: true
         uses: atlassian/gajira-comment@v3
         env:
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
